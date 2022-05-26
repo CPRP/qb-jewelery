@@ -79,13 +79,7 @@ local function smashVitrine(k)
                 TriggerServerEvent('qb-jewellery:server:setVitrineState', "isBusy", false, k)
                 TriggerServerEvent('qb-jewellery:server:vitrineReward')
                 TriggerServerEvent('qb-jewellery:server:setTimeout')
-                if not AlertSend then
-                    exports['ps-dispatch']:VangelicoRobbery()
-                    AlertSend = true
-                    SetTimeout(math.random(3000,6000), function()
-                        AlertSend = false
-                    end)
-                end
+                exports['ps-dispatch']:VangelicoRobbery()
                 -- TriggerServerEvent('police:server:policeAlert', 'Robbery in progress')
                 smashing = false
                 TaskPlayAnim(ped, animDict, "exit", 3.0, 3.0, -1, 2, 0, 0, 0, 0)
